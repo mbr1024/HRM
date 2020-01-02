@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.aynu.document.dao.IDocumentDao">
+    <select id="selectUser" resultType="User">
+        select *
+        from user_inf
+        where id = #{user_id}
+    </select>
+    <resultMap id="selectUserMap" type="Document">
+        <id column="id" property="id"/>
+        <result column="create_date" property="createDate"/>
+        <association property="user" select="selectUser" column="user_id" javaType="User"/>
+    </resultMap>
+    <select id="selectDocument" resultMap="selectUserMap">
+        select *
+        from document_inf
+        <if test="document.title!=null and document.title!=''">
+            where TITLE like "%"#{document.title}"%"
+        </if>
+        limit #{pageModel.firstLimitParam},#{pageModel.pageSize}
+
+    </select>
+    <select id="selectDocumentCount" resultType="int">
+        select count(*)
+        from document_inf
+        <if test="title!=null and title!=''">
+            where TITLE like "%"#{title}"%"
+        </if>
+    </select>
+    <select id="selectDocumentById" resultMap="selectUserMap">
+        select *
+        from document_inf
+        where id = #{id}
+    </select>
+    <update id="updateDocument">
+        update document_inf
+        <set>
+        <if test="remark!=null and remark!=''">
+            REMARK=#{remark},
+        </if>
+        <if test="title!=null and title!=''">
+            title=#{title},
+        </if>
+        <if test="filename!=null and filename!=''">
+            filename=#{filename}
+        </if>
+        </set>
+        where ID = #{id}
+    </update>
+    <delete id="deleteDocument" parameterType="int[]">
+        delete from document_inf where id in
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+    <insert id="insertDocument">
+        insert into document_inf (title, filename, remark, user_id)
+        values (#{title}, #{filename}, #{remark}, #{user.id})
+    </insert>
+</mapper>
