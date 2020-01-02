@@ -18,6 +18,7 @@ public class UserController {
     // private IUserDao userDao;
     @Resource
     private IUserService userService;
+
     @RequestMapping("/login.do")
     public String login(User user, Model model, HttpSession session) {
         //System.out.println(user);
