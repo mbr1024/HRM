@@ -36,14 +36,14 @@
     </servlet-mapping>
 
     <!--过滤器拦截登录-->
-<!--    <filter>-->
-<!--        <filter-name>loginFilter</filter-name>-->
-<!--        <filter-class>cn.aynu.filter.LoginFilter</filter-class>-->
-<!--    </filter>-->
-<!--    <filter-mapping>-->
-<!--        <filter-name>loginFilter</filter-name>-->
-<!--        <url-pattern>*.do</url-pattern>-->
-<!--    </filter-mapping>-->
+    <!--    <filter>-->
+    <!--        <filter-name>loginFilter</filter-name>-->
+    <!--        <filter-class>cn.aynu.filter.LoginFilter</filter-class>-->
+    <!--    </filter>-->
+    <!--    <filter-mapping>-->
+    <!--        <filter-name>loginFilter</filter-name>-->
+    <!--        <url-pattern>*.do</url-pattern>-->
+    <!--    </filter-mapping>-->
 
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>
@@ -54,4 +54,5 @@
             <taglib-location>/WEB-INF/page.tld</taglib-location>
         </taglib>
     </jsp-config>
+
 </web-app>

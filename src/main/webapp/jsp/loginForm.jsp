@@ -11,12 +11,10 @@
     <meta content="" name="author"/>
     <link href="${pageContext.request.contextPath}/js/metronic/plugins/bootstrap/css/bootstrap.min.css"
           rel="stylesheet" type="text/css"/>
-    <link
-            href="${pageContext.request.contextPath}/js/metronic/plugins/bootstrap/css/bootstrap-responsive.min.css"
-            rel="stylesheet" type="text/css"/>
-    <link
-            href="${pageContext.request.contextPath}/js/metronic/plugins/font-awesome/css/font-awesome.min.css"
-            rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/js/metronic/plugins/bootstrap/css/bootstrap-responsive.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/js/metronic/plugins/font-awesome/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/js/metronic/css/style-metro.css" rel="stylesheet"
           type="text/css"/>
     <link href="${pageContext.request.contextPath}/js/metronic/css/style.css" rel="stylesheet"
@@ -32,7 +30,7 @@
     <link href="${pageContext.request.contextPath}/js/metronic/css/pages/lock.css" rel="stylesheet"
           type="text/css"/>
     <!-- END PAGE LEVEL STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/fkjava.ico"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-migrate-1.2.1.js"></script>
     <link href="${pageContext.request.contextPath}/js/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet"
